@@ -1,0 +1,128 @@
+@import "./normalize.css";
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", "Open Sans", Arial, Helvetica, sans-serif;
+  line-height: 1.625;
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #510b76;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3.7rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+}
+
+/* navigation bar */
+.nav {
+  background: #510b76;
+  display: flex;
+  align-content: center;
+  padding: 1rem 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  margin: 1.5rem 1.5rem 1.5rem 0;
+}
+
+.nav__item > a {
+  color: #d2d0db;
+  transition: color 0.3s;
+  text-decoration: underline;
+}
+
+.nav__item > a:hover {
+  color: #fff;
+}
+
+.nav__toggler {
+  align-self: center;
+  opacity: 0.5;
+  transition: box-shadow 0.15s;
+}
+
+.collapsible--expanded .nav__toggler {
+  opacity: 1;
+  box-shadow: 0 0 0 3px #666;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 1000px) {
+  .nav__toggler {
+    display: none;
+  }
+  .nav__list {
+    width: auto;
+    display: flex;
+    max-height: 100%;
+    opacity: 1;
+  }
+}
+
+/* Collapsible */
+.collapsible__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
+/* icon */
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.icon--white {
+  fill: #fff;
+}
