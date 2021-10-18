@@ -1,5 +1,10 @@
 @import "./normalize.css";
 
+:root {
+  /* color palette */
+  --color-primary: #510b76;
+}
+
 *::after,
 *::before {
   box-sizing: border-box;
@@ -22,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #510b76;
+  color: var(--color-primary);
 }
 
 h1 {
@@ -125,4 +130,128 @@ a {
 
 .icon--white {
   fill: #fff;
+}
+
+/* grids */
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* containers */
+.container {
+  position: relative;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* .container .hero {
+  position: relative;
+} */
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+/* hero */
+.hero {
+  background-image: url(../images/NightCampus5Oct2020-16-scaled.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: grid;
+  height: 50rem;
+}
+
+@media screen and (min-width: 768) {
+  .hero {
+    display: flex;
+  }
+}
+
+/* card */
+.card {
+  border-radius: 1px;
+  border-top: 2px solid var(--color-primary);
+  background: #862db5;
+  padding: 1rem;
+}
+
+.hero .card {
+  position: absolute;
+}
+
+.hero .card--bottom-left {
+  left: 0;
+  bottom: -100px;
+}
+
+.card__header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.card__text {
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .hero .card {
+    width: 50%;
+  }
+
+  .hero .card--bottom-left {
+    left: 0;
+    bottom: 30px;
+  }
+}
+
+/* button */
+.btn {
+  cursor: pointer;
+  transform: all 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.2;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+  padding: 1rem;
 }
